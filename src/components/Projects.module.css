@@ -1,0 +1,176 @@
+.section {
+  padding: 56px 0 64px;
+}
+
+.command {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--paper-dim);
+  margin: 0 0 24px;
+}
+
+.prompt {
+  color: var(--signal);
+}
+
+.status {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.link {
+  color: var(--paper);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  border-bottom: 1px solid var(--line);
+}
+
+.rowButton {
+  width: 100%;
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 16px 4px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.rowButton:hover {
+  background: var(--ink-raised);
+}
+
+.rowButton:hover .repoName,
+.rowButton[aria-expanded='true'] .repoName {
+  color: var(--signal);
+}
+
+.rowButton:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline-offset: -2px;
+}
+
+.rowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.repoName {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.repoDesc {
+  font-size: 14px;
+  color: var(--paper-dim);
+}
+
+.rowMeta {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.expandIcon {
+  width: 24px;
+  color: var(--signal);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  line-height: 1;
+  text-align: right;
+}
+
+.details {
+  margin: 0 4px 18px;
+  padding: 16px 18px 18px;
+  border-left: 2px solid var(--signal);
+  background: var(--ink-raised);
+  animation: reveal 180ms ease-out;
+}
+
+.detailsText {
+  max-width: 62ch;
+  margin: 0 0 14px;
+  color: var(--paper-dim);
+  font-size: 14px;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.topic {
+  padding: 3px 7px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.repoLink {
+  color: var(--signal);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.repoLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .rowButton {
+    align-items: flex-start;
+  }
+
+  .rowMeta {
+    width: 100%;
+    padding-left: 0;
+    gap: 10px;
+    white-space: normal;
+  }
+
+  .expandIcon {
+    width: 18px;
+  }
+}
